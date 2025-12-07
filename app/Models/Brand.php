@@ -6,5 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Brand extends Model
 {
-    //
+    protected $fillable = ['name', 'email'];
+
+    public function campaigns()
+    {
+        return $this->hasMany(Campaign::class);
+    }
 }
